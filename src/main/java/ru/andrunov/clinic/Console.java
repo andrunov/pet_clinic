@@ -21,7 +21,7 @@ public class Console {
     }
 
     /**
-     * put out String in console
+     * put out Object in console
      * @param object - object to put toString in console
      */
     public void print(Object object){
@@ -29,11 +29,21 @@ public class Console {
     }
 
     /**
-     * put out String in console with line separator
+     * put out Object in console with line separator
      * @param object - object to put toString in console
      */
     public void println(Object object){
         System.out.println(object.toString());
+    }
+
+    /**
+     * put out Object in console with format
+     * @param format - String format
+     * @param objects - objects to put out
+     */
+    public void printf(String format, Object... objects){
+        System.out.printf(format, objects);
+        System.out.print(System.lineSeparator());
     }
 
     /**
@@ -45,7 +55,8 @@ public class Console {
         try {
             result = reader.readLine();
         }
-        catch (IOException e){}
+        catch (IOException e){
+            e.printStackTrace();}
         return result;
     }
 

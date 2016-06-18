@@ -23,9 +23,9 @@ public enum ClientCommands {
         stringBuilder.append(System.lineSeparator());
         stringBuilder.append("|  3: remove pet                 |");
         stringBuilder.append(System.lineSeparator());
-        stringBuilder.append("|  4: edit owner's parameters    |");
+        stringBuilder.append("|  4: edit client's parameters   |");
         stringBuilder.append(System.lineSeparator());
-        stringBuilder.append("|  5: remove owner               |");
+        stringBuilder.append("|  5: remove client              |");
         stringBuilder.append(System.lineSeparator());
         stringBuilder.append("|  6: back to clinic menu        |");
         stringBuilder.append(System.lineSeparator());

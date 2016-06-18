@@ -20,8 +20,8 @@ public class FindClients implements Command {
     public void execute(Object clinic, Console console) throws OperationException {
         console.println("Insert name or name's part");
         String name = console.read();
-        ArrayList<Client> clients = ((Clinic)clinic).findOwners(name);
-        console.println("found: " + clients.size());
+        ArrayList<Client> clients = ((Clinic)clinic).findClients(name);
+        console.printf("found: %d", clients.size());
         for (Client client : clients){
             console.println(client);
         }

@@ -23,7 +23,7 @@ public class AddClient implements Command {
         String phoneNumber = console.read();
         Client client = new Client(name,address,phoneNumber);
         try {
-            ((Clinic)clinic).addNewOwner(client);
+            ((Clinic)clinic).addNewClient(client);
             console.println(client);
         }catch (OperationException e){
             console.println(e.getMessage());

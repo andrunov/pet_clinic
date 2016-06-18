@@ -11,5 +11,6 @@ public class ClinicRunner {
         Clinic clinic = new Clinic(console);
         ClinicExecutor clinicExecutor = new ClinicExecutor(clinic,console);
         clinicExecutor.runCommandCycle();
+        console.println("Good bye");
     }
 }

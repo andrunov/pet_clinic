@@ -12,7 +12,7 @@ public class ClinicTest {
 
     @Test
     public void testGetAllOwners() throws Exception {
-//        Assert.assertEquals(new ArrayList<Client>(),Clinic.getAllOwners());
+//        Assert.assertEquals(new ArrayList<Client>(),Clinic.getAllClients());
 
     }
 }

@@ -8,5 +8,6 @@ import ru.andrunov.clinic.exceptions.OperationException;
  * use instead of null
  */
 public class Exit implements Command {
-    public void execute(Object clinic, Console console) throws OperationException {}
+    public void execute(Object clinic, Console console) throws OperationException {
+    }
 }

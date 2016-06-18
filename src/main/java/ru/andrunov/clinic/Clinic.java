@@ -28,7 +28,7 @@ public class Clinic {
     }
 
 
-    public ArrayList<Client> getAllOwners() {
+    public ArrayList<Client> getAllClients() {
         return clients;
     }
 
@@ -39,13 +39,13 @@ public class Clinic {
      *
      * @param client - client to add
      */
-    public void addNewOwner(Client client) throws OperationException {
+    public void addNewClient(Client client) throws OperationException{
         if (clients.contains(client)) {
-            StringBuilder exMessage = new StringBuilder("client wits such parameters already exists: ");
-            exMessage.append(System.lineSeparator());
+            StringBuilder message = new StringBuilder("client wits such parameters already exists: ");
+            message.append(System.lineSeparator());
             Client existClient = clients.get(clients.indexOf(client));
-            exMessage.append(existClient);
-            throw new OperationException(exMessage.toString());
+            message.append(existClient);
+            throw new OperationException(message.toString());
         } else {
             clients.add(client);
             this.console.println("client was successfully added");
@@ -58,7 +58,7 @@ public class Clinic {
      * @param substring - name or any part of it
      * @return list of found clients
      */
-    public ArrayList<Client> findOwners(String substring) {
+    public ArrayList<Client> findClients(String substring) {
         ArrayList<Client> result = new ArrayList();
         for (Client client : clients) {
             if (client.getName().contains(substring)) {

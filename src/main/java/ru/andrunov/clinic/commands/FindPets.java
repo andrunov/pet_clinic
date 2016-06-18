@@ -21,7 +21,7 @@ public class FindPets implements Command {
         console.println("Insert nickname or it's part");
         String nickName = console.read();
         ArrayList<Pet> pets = ((Clinic)clinic).findPets(nickName);
-        console.println("found: " + pets.size());
+        console.printf("found: %d", pets.size());
         for (Pet pet : pets){
             console.println(pet.showDetailInfo());
         }

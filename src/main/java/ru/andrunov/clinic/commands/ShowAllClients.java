@@ -19,7 +19,7 @@ public class ShowAllClients implements Command {
             console.println("Not clients in base yet");
         }
         else {
-            for (Client client : ourClinic.getAllOwners()) {
+            for (Client client : ourClinic.getAllClients()) {
                 console.println(client);
             }
         }

@@ -21,7 +21,6 @@ public class Client {
      * @param name - clients name
      * @param address - clients address
      * @param phoneNumber - clients phone number
-     * @pets - clients pets
      */
     public Client(String name, String address, String phoneNumber) {
         this.address = address;
