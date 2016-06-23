@@ -1,9 +1,9 @@
 package ru.andrunov.clinic.commands;
 
 import ru.andrunov.clinic.Client;
-import ru.andrunov.clinic.Console;
 import ru.andrunov.clinic.Pet;
 import ru.andrunov.clinic.exceptions.OperationException;
+import ru.andrunov.clinic.autotest.InputOutput;
 
 /**
  * remove pet from client's pet list
@@ -27,8 +27,10 @@ public class RemovePet implements Command {
      * @param console - console for input - output
      * @throws OperationException
      */
-    public void execute(Object client, Console console) throws OperationException {
-        Pet pet = this.commonCommands.getPet((Client)client,console);
+    public void execute(Object client, InputOutput console) throws OperationException {
+        console.println("Insert pet's nickname or id");
+        String value = console.read();
+        Pet pet = this.commonCommands.getPet((Client)client,value);
         if (pet == Pet.DEFAULT){
             console.println("this client has not such pet");
         }

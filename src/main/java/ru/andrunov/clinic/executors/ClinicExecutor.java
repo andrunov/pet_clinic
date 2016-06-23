@@ -1,10 +1,11 @@
 package ru.andrunov.clinic.executors;
 
 import ru.andrunov.clinic.Clinic;
-import ru.andrunov.clinic.Console;
 import ru.andrunov.clinic.commands.*;
 import ru.andrunov.clinic.exceptions.OperationException;
 import ru.andrunov.clinic.enums.ClinicCommands;
+import ru.andrunov.clinic.autotest.InputOutput;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,7 +16,7 @@ import java.util.Map;
 public class ClinicExecutor {
 
     private Clinic clinic;
-    private Console console;
+    private InputOutput console;
     private Map<ClinicCommands,Command> commandMap;
 
     /**
@@ -23,7 +24,7 @@ public class ClinicExecutor {
      * @param clinic clinic object
      * @param console console object
      */
-    public ClinicExecutor(Clinic clinic, Console console) {
+    public ClinicExecutor(Clinic clinic, InputOutput console) {
         this.clinic = clinic;
         this.console = console;
     }
@@ -46,12 +47,12 @@ public class ClinicExecutor {
      * turns till user put EXIT-command
      */
     public void runCommandCycle(){
-        ClinicCommands clinicCommands = null;
-        while (clinicCommands!= ClinicCommands.EXIT){
+        ClinicCommands clinicCommand = null;
+        while (clinicCommand!= ClinicCommands.EXIT){
             console.print(ClinicCommands.showOperations());
             try {
-                clinicCommands = ClinicCommands.getCommandByOrdinal(this.console.readInt());
-                executeOperation(clinicCommands);
+                clinicCommand = ClinicCommands.getCommandByOrdinal(this.console.readInt());
+                executeOperation(clinicCommand);
             }catch (OperationException e){
                 this.console.println(e.getMessage());
             }
@@ -63,7 +64,6 @@ public class ClinicExecutor {
      */
     public void executeOperation(ClinicCommands command) throws OperationException{
         this.commandMap.get(command).execute(this.clinic,this.console);
-
     }
 
 }

@@ -1,10 +1,10 @@
 package ru.andrunov.clinic.executors;
 
 import ru.andrunov.clinic.Client;
-import ru.andrunov.clinic.Console;
 import ru.andrunov.clinic.commands.*;
 import ru.andrunov.clinic.enums.EditCommands;
 import ru.andrunov.clinic.exceptions.OperationException;
+import ru.andrunov.clinic.autotest.InputOutput;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,10 +15,10 @@ import java.util.Map;
  */
 public class EditExecutor {
     private Client client;
-    private Console console;
+    private InputOutput console;
     private Map<EditCommands,Command> commandMap;
 
-    public EditExecutor(Client client, Console console) {
+    public EditExecutor(Client client, InputOutput console) {
         this.client = client;
         this.console = console;
     }

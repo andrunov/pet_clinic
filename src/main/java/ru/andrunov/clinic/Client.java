@@ -135,10 +135,10 @@ public class Client {
         StringBuilder stringBuilder = new StringBuilder("id: "); stringBuilder.append(this.id);
         stringBuilder.append(" ");
         stringBuilder.append(this.name);
-        stringBuilder.append("; phone: ");
-        stringBuilder.append(this.phoneNumber);
         stringBuilder.append("; address: ");
         stringBuilder.append(this.address);
+        stringBuilder.append("; phone: ");
+        stringBuilder.append(this.phoneNumber);
         return  stringBuilder.toString();
     }
 

@@ -2,8 +2,8 @@ package ru.andrunov.clinic.commands;
 
 import ru.andrunov.clinic.Client;
 import ru.andrunov.clinic.Clinic;
-import ru.andrunov.clinic.Console;
 import ru.andrunov.clinic.exceptions.OperationException;
+import ru.andrunov.clinic.autotest.InputOutput;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ public class FindClients implements Command {
      * @param console - console for input - output
      * @throws OperationException
      */
-    public void execute(Object clinic, Console console) throws OperationException {
+    public void execute(Object clinic, InputOutput console) throws OperationException {
         console.println("Insert name or name's part");
         String name = console.read();
         ArrayList<Client> clients = ((Clinic)clinic).findClients(name);

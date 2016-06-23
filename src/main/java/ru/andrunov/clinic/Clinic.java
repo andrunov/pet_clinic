@@ -1,6 +1,7 @@
 package ru.andrunov.clinic;
 
 import ru.andrunov.clinic.exceptions.OperationException;
+import ru.andrunov.clinic.autotest.InputOutput;
 
 import java.util.ArrayList;
 
@@ -16,13 +17,13 @@ public class Clinic {
     /**
      * - console object for input - output
      */
-    private Console console;
+    private InputOutput console;
 
     /**
      * constructor
      * @param console - console for input - output
      */
-    public Clinic(Console console) {
+    public Clinic(InputOutput console) {
         this.clients = new ArrayList<Client>();
         this.console = console;
     }

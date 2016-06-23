@@ -4,6 +4,7 @@ import ru.andrunov.clinic.*;
 import ru.andrunov.clinic.commands.*;
 import ru.andrunov.clinic.enums.ClientCommands;
 import ru.andrunov.clinic.exceptions.OperationException;
+import ru.andrunov.clinic.autotest.InputOutput;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +19,7 @@ public class ClientExecutor {
      * keeps link to client object to execute
      */
     private Client client;
-    private Console console;
+    private InputOutput console;
     private Clinic clinic;
     private Map<ClientCommands,Command> commandMap;
 
@@ -27,7 +28,7 @@ public class ClientExecutor {
      * @param client client to execute command with
      * @param console console class
      */
-    public ClientExecutor(Clinic clinic, Client client, Console console) {
+    public ClientExecutor(Clinic clinic, Client client, InputOutput console) {
         this.client = client;
         this.console = console;
         this.clinic = clinic;

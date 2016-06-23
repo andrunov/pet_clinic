@@ -1,11 +1,11 @@
 package ru.andrunov.clinic.commands;
 
 import ru.andrunov.clinic.Client;
-import ru.andrunov.clinic.Console;
 import ru.andrunov.clinic.Pet;
 import ru.andrunov.clinic.enums.Animal;
 import ru.andrunov.clinic.enums.Sex;
 import ru.andrunov.clinic.exceptions.OperationException;
+import ru.andrunov.clinic.autotest.InputOutput;
 
 /**
  * add new pet to client
@@ -17,7 +17,7 @@ public class AddPet implements Command {
      * @param console - console object
      * @throws OperationException
      */
-    public void execute(Object client, Console console) throws OperationException {
+    public void execute(Object client, InputOutput console) throws OperationException {
         Client clientToAddPet = (Client)client;
 
         Animal animal = getAnimalType(console);
@@ -37,7 +37,7 @@ public class AddPet implements Command {
      * @param console - console object
      * @return Animal object
      */
-    private Animal getAnimalType(Console console){
+    private Animal getAnimalType(InputOutput console){
         Animal result = null;
         console.print("Chose animal's type: ");
         console.println(Animal.showAllValues());
@@ -57,7 +57,7 @@ public class AddPet implements Command {
      * @param console - console object
      * @return sex object
      */
-    private Sex getAnimalSex(Console console){
+    private Sex getAnimalSex(InputOutput console){
         Sex result = null;
         console.print("Chose animal's sex: ");
         console.println(Sex.showAllValues());

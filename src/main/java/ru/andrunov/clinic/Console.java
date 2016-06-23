@@ -1,5 +1,7 @@
 package ru.andrunov.clinic;
 
+import ru.andrunov.clinic.autotest.InputOutput;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,7 +9,7 @@ import java.io.InputStreamReader;
 /**
  * class for input - output
  */
-public class Console {
+public class Console implements InputOutput {
     /**
      * use for input
      */

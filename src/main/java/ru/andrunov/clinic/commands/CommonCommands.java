@@ -2,8 +2,8 @@ package ru.andrunov.clinic.commands;
 
 import ru.andrunov.clinic.Client;
 import ru.andrunov.clinic.Clinic;
-import ru.andrunov.clinic.Console;
 import ru.andrunov.clinic.Pet;
+import ru.andrunov.clinic.autotest.InputOutput;
 
 /**
  * some methods using
@@ -13,10 +13,8 @@ public class CommonCommands {
     /**
      * gets user's pet by nickname or id
      */
-    public Pet getPet(Client client, Console console){
+    public Pet getPet(Client client, String value){
         Pet result;
-        console.println("Insert pet's nickname or id");
-        String value = console.read();
         try {
             result = client.getPet(Integer.parseInt(value));
         } catch (NumberFormatException e) {
@@ -28,10 +26,8 @@ public class CommonCommands {
     /**
      * gets client by name or id
      */
-    public Client getClient(Clinic clinic, Console console){
+    public Client getClient(Clinic clinic, String value){
         Client result;
-        console.println("Input id or client's name");
-        String value = console.read();
         try {
             result = clinic.getClient(Integer.parseInt(value));
         } catch (NumberFormatException e) {
