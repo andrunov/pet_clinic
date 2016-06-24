@@ -30,7 +30,7 @@
               <index>true</index>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>ru.andrunov.clinic.Clinic</mainClass>
+                <mainClass>ru.andrunov.clinic.ClinicRunner</mainClass>
               </manifest>
               <manifestEntries>
                 <mode>development</mode>
