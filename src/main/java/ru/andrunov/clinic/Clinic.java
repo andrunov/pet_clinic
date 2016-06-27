@@ -2,6 +2,8 @@ package ru.andrunov.clinic;
 
 import ru.andrunov.clinic.exceptions.OperationException;
 import ru.andrunov.clinic.autotest.InputOutput;
+import ru.andrunov.clinic.generics.DynamicArray;
+import ru.andrunov.clinic.generics.LinkedArray;
 
 import java.util.ArrayList;
 
@@ -13,7 +15,7 @@ public class Clinic {
     /**
      * clinic-clients(clients) list
      */
-    private ArrayList<Client> clients;
+    private LinkedArray<Client> clients;
     /**
      * - console object for input - output
      */
@@ -24,12 +26,12 @@ public class Clinic {
      * @param console - console for input - output
      */
     public Clinic(InputOutput console) {
-        this.clients = new ArrayList<Client>();
+        this.clients = new LinkedArray<Client>();
         this.console = console;
     }
 
 
-    public ArrayList<Client> getAllClients() {
+    public LinkedArray<Client> getAllClients() {
         return clients;
     }
 

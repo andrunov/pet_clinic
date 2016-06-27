@@ -96,8 +96,6 @@ public class Client {
         return result;
     }
 
-
-
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
     }
@@ -164,5 +162,26 @@ public class Client {
         }
 
         return  stringBuilder.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+
+        Client client = (Client) o;
+
+        if (!getAddress().equals(client.getAddress())) return false;
+        if (!getPhoneNumber().equals(client.getPhoneNumber())) return false;
+        return getName().equals(client.getName());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getAddress().hashCode();
+        result = 31 * result + getPhoneNumber().hashCode();
+        result = 31 * result + getName().hashCode();
+        return result;
     }
 }

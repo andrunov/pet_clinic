@@ -9,5 +9,5 @@ public interface InputOutput {
     int readInt();                                  //return some int
     void print(Object object);                      //put out object
     void println(Object object);                    //put out object with line separator
-    void printf(String format,Object... objects);   //put out object with format
+    void printf(String format,Object... objects);   //put out object with formatting
 }
