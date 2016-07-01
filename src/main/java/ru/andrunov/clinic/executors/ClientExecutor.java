@@ -68,8 +68,9 @@ public class ClientExecutor {
      * execute operation by input enum
      */
     public void executeOperation(ClientCommands command) throws OperationException{
-        this.commandMap.get(command).execute(this.client,this.console);
-
+        synchronized (this.client) {
+            this.commandMap.get(command).execute(this.client, this.console);
+        }
     }
 
 }

@@ -55,9 +55,9 @@ public class EditExecutor {
      * execute operation by input enum
      */
     public void executeOperation(EditCommands command) throws OperationException{
-        this.commandMap.get(command).execute(client,console);
-
-
+        synchronized (this.client) {
+            this.commandMap.get(command).execute(client, console);
+        }
     }
 
 }

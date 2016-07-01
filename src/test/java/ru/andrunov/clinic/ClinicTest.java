@@ -12,7 +12,7 @@ public class ClinicTest {
 
     @Test(expected = OperationException.class)
     public void testAddNewClient() throws Exception {
-        Clinic clinic = new Clinic(new Console());
+        Clinic clinic = new Clinic();
         clinic.addNewClient(new Client("Иванов И.И.","ул.Чехова 7","8-865-88-56"));
         clinic.addNewClient(new Client("Иванов И.И.","ул.Чехова 7","8-865-88-56"));
 

@@ -13,5 +13,5 @@ public interface Command {
      * @param console - console for input - output
      * @throws OperationException
      */
-    public void execute(Object object, InputOutput console) throws OperationException;
+    void execute(Object object, InputOutput console) throws OperationException;
 }

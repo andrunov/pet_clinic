@@ -24,6 +24,7 @@ public class AddClient implements Command {
         Client client = new Client(name,address,phoneNumber);
         try {
             ((Clinic)clinic).addNewClient(client);
+            console.println("client was successfully added");
             console.println(client);
         }catch (OperationException e){
             console.println(e.getMessage());

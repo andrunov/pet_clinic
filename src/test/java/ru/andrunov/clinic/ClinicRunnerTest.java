@@ -5,7 +5,6 @@ import org.junit.Test;
 import ru.andrunov.clinic.commands.CommonCommands;
 import ru.andrunov.clinic.enums.ClientCommands;
 import ru.andrunov.clinic.enums.ClinicCommands;
-import ru.andrunov.clinic.exceptions.OperationException;
 import ru.andrunov.clinic.executors.ClinicExecutor;
 import ru.andrunov.clinic.autotest.ConsoleEmulator;
 
@@ -55,10 +54,9 @@ public class ClinicRunnerTest {
     @Test
     public void testMain() throws Exception {
         ConsoleEmulator console = new ConsoleEmulator(userInput);
-        Clinic clinic = new Clinic(console);
+        Clinic clinic = new Clinic();
         ClinicExecutor clinicExecutor = new ClinicExecutor(clinic,console);
-        clinicExecutor.runCommandCycle();
-        console.println("Good bye");
+        clinicExecutor.run();
         buildProgramOutput();
         Assert.assertEquals(programOutput.toString(),console.getResult());
 
@@ -244,12 +242,5 @@ public class ClinicRunnerTest {
         programOutput.append(userInput[index++]);
         programOutput.append(System.lineSeparator());
     }
-
-    private void getExpectedAddPet(){
-
-    }
-
-
-
 
 }

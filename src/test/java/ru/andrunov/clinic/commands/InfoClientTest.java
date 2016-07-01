@@ -18,7 +18,7 @@ public class InfoClientTest {
     public void testExecute() throws Exception {
         String[] userInput = new String[]{"Васин"};
         InputOutput console = new ConsoleEmulator(userInput);
-        Clinic clinic = new Clinic(console);
+        Clinic clinic = new Clinic();
         InfoClient infoClient = new InfoClient(clinic);
         infoClient.execute(clinic,console);
     }

@@ -13,7 +13,7 @@ import java.util.Map;
  * class responsible for interactive
  * communication program with user
  */
-public class ClinicExecutor {
+public class ClinicExecutor extends Thread {
 
     private Clinic clinic;
     private InputOutput console;
@@ -46,7 +46,7 @@ public class ClinicExecutor {
     /**
      * turns till user put EXIT-command
      */
-    public void runCommandCycle(){
+    public void run(){
         ClinicCommands clinicCommand = null;
         while (clinicCommand!= ClinicCommands.EXIT){
             console.print(ClinicCommands.showOperations());
@@ -57,13 +57,17 @@ public class ClinicExecutor {
                 this.console.println(e.getMessage());
             }
         }
+        console.print("Good bye");
+
     }
 
     /**
      * execute operation by input enum
      */
     public void executeOperation(ClinicCommands command) throws OperationException{
-        this.commandMap.get(command).execute(this.clinic,this.console);
+        synchronized (this.clinic) {
+            this.commandMap.get(command).execute(this.clinic, this.console);
+        }
     }
 
 }

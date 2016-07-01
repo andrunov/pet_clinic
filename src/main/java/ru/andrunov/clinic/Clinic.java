@@ -16,18 +16,12 @@ public class Clinic {
      * clinic-clients(clients) list
      */
     private LinkedArray<Client> clients;
-    /**
-     * - console object for input - output
-     */
-    private InputOutput console;
 
     /**
      * constructor
-     * @param console - console for input - output
      */
-    public Clinic(InputOutput console) {
+    public Clinic() {
         this.clients = new LinkedArray<Client>();
-        this.console = console;
     }
 
 
@@ -51,7 +45,6 @@ public class Clinic {
             throw new OperationException(message.toString());
         } else {
             clients.add(client);
-            this.console.println("client was successfully added");
         }
     }
 
